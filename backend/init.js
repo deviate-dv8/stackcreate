@@ -2,6 +2,8 @@ import { select, Separator } from "@inquirer/prompts";
 import chalk from "chalk";
 import expressInit from "./unopinionated/expressInit.js";
 import fastifyInit from "./unopinionated/fastifyInit.js";
+import nestInit from "./opinionated/nestInit.js";
+import adonisInit from "./opinionated/adonisInit.js";
 
 export default async function backEndInit() {
   console.log(chalk.red("You selected Backend!"));
@@ -28,17 +30,13 @@ export default async function backEndInit() {
       console.log(chalk.green("Initializing Fastify project..."));
       await fastifyInit();
       break;
-    case "koa":
-      console.log(chalk.green("Initializing Koa.js project..."));
-      break;
-    case "hapi":
-      console.log(chalk.green("Initializing Hapi.js project..."));
-      break;
     case "nest":
       console.log(chalk.green("Initializing NestJS project..."));
+      await nestInit();
       break;
     case "adonis":
       console.log(chalk.green("Initializing AdonisJS project..."));
+      await adonisInit();
       break;
   }
 }
