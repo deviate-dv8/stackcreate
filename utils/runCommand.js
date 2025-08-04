@@ -1,7 +1,11 @@
 import { spawn } from "child_process";
 import chalk from "chalk";
 
-export default async function runCommand(command, args) {
+export default async function runCommand(
+  command,
+  args,
+  successMsg = "Process completed successfully.",
+) {
   return new Promise((resolve, reject) => {
     const child = spawn(command, args, { stdio: "inherit" });
 
@@ -15,7 +19,7 @@ export default async function runCommand(command, args) {
         console.error(chalk.red(`Process exited with code ${code}`));
         reject(new Error(`Process exited with code ${code}`));
       } else {
-        console.log(chalk.green("Process completed successfully."));
+        console.log(chalk.green(successMsg));
         resolve();
       }
     });
