@@ -35,7 +35,11 @@ export default async function reactInit() {
         ? []
         : ["--template", "remix-run/react-router-templates/javascript"]),
     ];
-    await runCommand("npx", args);
+    await runCommand(
+      "npx",
+      args,
+      " Successfully initialized React project with Vite.",
+    );
   } else {
     console.log(
       chalk.green("Initializing React project with Create React App..."),
@@ -45,8 +49,7 @@ export default async function reactInit() {
       reactAppName,
       ...(reactTypescript === "yes" ? ["--template", "typescript"] : []),
     ];
-    await runCommand("npx", args);
+    await runCommand("npx", args, " Successfully initialized React project.");
   }
   return;
 }
-``;

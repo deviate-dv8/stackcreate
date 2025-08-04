@@ -27,5 +27,5 @@ export default async function angularInit() {
     // ...(angularTypescript === "yes" ? ["--defaults"] : ["--skip-install"]),
   ];
   console.log(chalk.green("Initializing Angular project with Angular CLI..."));
-  await runCommand("ng", args);
+  await runCommand("ng", args, " Successfully initialized Angular project.");
 }
