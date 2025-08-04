@@ -2,6 +2,7 @@
   "name": "stackcreate",
   "version": "1.0.0",
   "description": "Just a simple CLI tool for initializing framework without having to remember or google things",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/deviate-dv8/stackcreate/issues"
   },
-  "homepage": "https://github.com/deviate-dv8/stackcreate#readme"
+  "homepage": "https://github.com/deviate-dv8/stackcreate#readme",
+  "dependencies": {
+    "chalk": "^5.5.0",
+    "inquirer": "^12.9.0"
+  }
 }
