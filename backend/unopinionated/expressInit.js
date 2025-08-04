@@ -3,7 +3,7 @@ import { input, select } from "@inquirer/prompts";
 export default async function expressInit() {
   const projectName = await input({
     message: "Enter the name of your Express.js project:",
-    default: "my-express-app",
+    default: "my-app",
   });
   const typescriptSupport = await select({
     message: "Would you like to include TypeScript support?",
