@@ -3,6 +3,8 @@ import chalk from "chalk";
 import reactInit from "./reactInit.js";
 import vueInit from "./vueInit.js";
 import angularInit from "./angularInit.js";
+import svelteInit from "./svelteInit.js";
+
 export default async function frontEndInit() {
   console.log(chalk.blue("You selected Frontend!"));
   const answerFrontend = await select({
@@ -32,6 +34,7 @@ export default async function frontEndInit() {
       break;
     case "svelte":
       console.log(chalk.hex("#FFA500")("You selected Svelte!"));
+      await svelteInit();
       break;
     case "solid":
       console.log(chalk.blue("You selected Solid!"));
