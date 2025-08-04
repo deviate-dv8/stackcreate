@@ -2,6 +2,7 @@ import { select } from "@inquirer/prompts";
 import chalk from "chalk";
 import reactInit from "./reactInit.js";
 import vueInit from "./vueInit.js";
+import angularInit from "./angularInit.js";
 export default async function frontEndInit() {
   console.log(chalk.blue("You selected Frontend!"));
   const answerFrontend = await select({
@@ -26,6 +27,7 @@ export default async function frontEndInit() {
       await vueInit();
       break;
     case "angular":
+      await angularInit();
       console.log(chalk.red("You selected Angular!"));
       break;
     case "svelte":

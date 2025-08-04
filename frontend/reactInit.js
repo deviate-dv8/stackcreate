@@ -35,7 +35,7 @@ export default async function reactInit() {
         ? []
         : ["--template", "remix-run/react-router-templates/javascript"]),
     ];
-    runCommand("npx", args);
+    await runCommand("npx", args);
   } else {
     console.log(
       chalk.green("Initializing React project with Create React App..."),
@@ -45,7 +45,7 @@ export default async function reactInit() {
       reactAppName,
       ...(reactTypescript === "yes" ? ["--template", "typescript"] : []),
     ];
-    runCommand("npx", args);
+    await runCommand("npx", args);
   }
   return;
 }
