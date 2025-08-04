@@ -2,7 +2,8 @@
 
 import chalk from "chalk";
 import { select } from "@inquirer/prompts";
-import frontEndInit from "./frontend/frontEndInit.js";
+import frontEndInit from "./frontend/init.js";
+import backEndInit from "./backend/init.js";
 console.clear();
 console.log(
   "\
@@ -30,6 +31,7 @@ switch (answer) {
     await frontEndInit();
     break;
   case "backend":
+    await backEndInit();
     break;
   case "fullstack":
     break;
