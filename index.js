@@ -4,6 +4,7 @@ import chalk from "chalk";
 import { select } from "@inquirer/prompts";
 import frontEndInit from "./frontend/init.js";
 import backEndInit from "./backend/init.js";
+import fullStackInit from "./fullstack/init.js";
 console.clear();
 console.log(
   "\
@@ -34,6 +35,7 @@ switch (answer) {
     await backEndInit();
     break;
   case "fullstack":
+    await fullStackInit();
     break;
   default:
     console.error(chalk.red("Invalid option selected."));
