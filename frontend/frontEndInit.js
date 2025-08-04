@@ -4,6 +4,7 @@ import reactInit from "./reactInit.js";
 import vueInit from "./vueInit.js";
 import angularInit from "./angularInit.js";
 import svelteInit from "./svelteInit.js";
+import solidInit from "./solidInit.js";
 
 export default async function frontEndInit() {
   console.log(chalk.blue("You selected Frontend!"));
@@ -38,6 +39,7 @@ export default async function frontEndInit() {
       break;
     case "solid":
       console.log(chalk.blue("You selected Solid!"));
+      await solidInit();
       break;
     case "vite":
       console.log(chalk.blue("You selected Vite!"));
