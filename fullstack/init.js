@@ -4,6 +4,7 @@ import nextInit from "./nextInit.js";
 import nuxtInit from "./nuxtInit.js";
 import svelteKitInit from "./svelteKitInit.js";
 import solidStartInit from "./solidStartInit.js";
+import astroInit from "./astroInit.js";
 
 export default async function fullStackInit() {
   console.log(chalk.green("You selected Fullstack!"));
@@ -39,6 +40,7 @@ export default async function fullStackInit() {
       console.log(
         `You chose ${chalk.hex("#0D031F")("As")}${chalk.hex("#FFA500")("tro")}!`,
       );
+      await astroInit();
       break;
     default:
       console.error(chalk.red("Invalid option selected."));
