@@ -1,7 +1,11 @@
-export default async function initReact() {
+import { exec } from "child_process";
+import chalk from "chalk";
+import { input, select } from "@inquirer/prompts";
+
+export default async function reactInit() {
   const initReact = await select({
     message:
-      "Would you like to initialize a React project with Vite?\n If no, this will initialize a React project with Create React App.",
+      "Would you like to initialize a React project with Vite (React Router)?\n If no, this will initialize a React project with Create React App.",
     default: "yes",
     choices: [
       { value: "yes", name: "Yes" },
@@ -56,4 +60,5 @@ export default async function initReact() {
       },
     );
   }
+  return;
 }
