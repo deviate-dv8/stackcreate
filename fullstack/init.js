@@ -3,6 +3,8 @@ import chalk from "chalk";
 import nextInit from "./nextInit.js";
 import nuxtInit from "./nuxtInit.js";
 import svelteKitInit from "./svelteKitInit.js";
+import solidStartInit from "./solidStartInit.js";
+
 export default async function fullStackInit() {
   console.log(chalk.green("You selected Fullstack!"));
   const answerFullStack = await select({
@@ -31,6 +33,7 @@ export default async function fullStackInit() {
       break;
     case "solidstart":
       console.log(chalk.blue("You chose SolidStart!"));
+      await solidStartInit();
       break;
     case "astro":
       console.log(
