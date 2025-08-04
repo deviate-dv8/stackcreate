@@ -1,6 +1,7 @@
 import { select, Separator } from "@inquirer/prompts";
 import chalk from "chalk";
 import expressInit from "./unopinionated/expressInit.js";
+import fastifyInit from "./unopinionated/fastifyInit.js";
 
 export default async function backEndInit() {
   console.log(chalk.red("You selected Backend!"));
@@ -12,14 +13,9 @@ export default async function backEndInit() {
       new Separator("Unopinionated Frameworks"),
       { value: "express", name: "Express.js" },
       { value: "fastify", name: "Fastify" },
-      { value: "koa", name: "Koa.js" },
-      { value: "hapi", name: "Hapi.js" },
       new Separator("Opinionated Frameworks"),
       { value: "nest", name: "NestJS" },
       { value: "adonis", name: "AdonisJS" },
-      { value: "sails", name: "Sails.js" },
-      { value: "loopback", name: "LoopBack" },
-      { value: "feathers", name: "FeathersJS" },
     ],
   });
 
@@ -30,6 +26,7 @@ export default async function backEndInit() {
       break;
     case "fastify":
       console.log(chalk.green("Initializing Fastify project..."));
+      await fastifyInit();
       break;
     case "koa":
       console.log(chalk.green("Initializing Koa.js project..."));
