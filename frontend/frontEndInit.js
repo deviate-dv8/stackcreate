@@ -5,6 +5,7 @@ import vueInit from "./vueInit.js";
 import angularInit from "./angularInit.js";
 import svelteInit from "./svelteInit.js";
 import solidInit from "./solidInit.js";
+import viteInit from "./viteInit.js";
 
 export default async function frontEndInit() {
   console.log(chalk.blue("You selected Frontend!"));
@@ -42,7 +43,8 @@ export default async function frontEndInit() {
       await solidInit();
       break;
     case "vite":
-      console.log(chalk.blue("You selected Vite!"));
+      console.log(chalk.yellow("You selected Vite!"));
+      await viteInit();
       break;
     default:
       console.error(chalk.red("Invalid option selected."));
