@@ -1,2 +1,2 @@
 # stackcreate
-Stupidly simple CLI tool for initializing frameworks
+Stupidly simple CLI tool for initializing frameworks in JavaScript Ecosystem.
