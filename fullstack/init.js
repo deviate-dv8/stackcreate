@@ -2,6 +2,7 @@ import { select, Separator } from "@inquirer/prompts";
 import chalk from "chalk";
 import nextInit from "./nextInit.js";
 import nuxtInit from "./nuxtInit.js";
+import svelteKitInit from "./svelteKitInit.js";
 export default async function fullStackInit() {
   console.log(chalk.green("You selected Fullstack!"));
   const answerFullStack = await select({
@@ -26,6 +27,7 @@ export default async function fullStackInit() {
       break;
     case "sveltekit":
       console.log(chalk.hex("#FFA500")("You chose SvelteKit!"));
+      await svelteKitInit();
       break;
     case "solidstart":
       console.log(chalk.blue("You chose SolidStart!"));
