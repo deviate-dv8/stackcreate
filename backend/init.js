@@ -27,15 +27,15 @@ export default async function backEndInit() {
       await expressInit();
       break;
     case "fastify":
-      console.log(chalk.green("Initializing Fastify project..."));
+      console.log(chalk.gray("Initializing Fastify project..."));
       await fastifyInit();
       break;
     case "nest":
-      console.log(chalk.green("Initializing NestJS project..."));
+      console.log(chalk.red("Initializing NestJS project..."));
       await nestInit();
       break;
     case "adonis":
-      console.log(chalk.green("Initializing AdonisJS project..."));
+      console.log(chalk.hex("#5A45FF")("Initializing AdonisJS project..."));
       await adonisInit();
       break;
   }
