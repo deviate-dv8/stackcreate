@@ -1,0 +1,19 @@
+{
+  "name": "stackcreate",
+  "version": "1.0.0",
+  "description": "Just a simple CLI tool for initializing framework without having to remember or google things",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deviate-dv8/stackcreate.git"
+  },
+  "author": "deviate-dv8",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deviate-dv8/stackcreate/issues"
+  },
+  "homepage": "https://github.com/deviate-dv8/stackcreate#readme"
+}
