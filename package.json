@@ -4,6 +4,7 @@
   "description": "Just a simple CLI tool for initializing framework without having to remember or google things",
   "type": "module",
   "main": "index.js",
+  "bin": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
