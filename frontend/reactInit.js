@@ -1,7 +1,6 @@
-import { exec } from "child_process";
 import chalk from "chalk";
 import { input, select } from "@inquirer/prompts";
-
+import runCommand from "../utils/runCommand.js";
 export default async function reactInit() {
   const initReact = await select({
     message:
@@ -29,36 +28,25 @@ export default async function reactInit() {
     console.log(
       chalk.green("Initializing React project with Vite (React Router)..."),
     );
-    exec(
-      `npx npx create-react-router@latest ${reactAppName} ${reactTypescript === "yes" ? "" : "--template remix-run/react-router-templates/javascript"}`,
-      (error, stdout, stderr) => {
-        if (error) {
-          console.error(chalk.red(`Error: ${error.message}`));
-          return;
-        }
-        if (stderr) {
-          console.error(chalk.yellow(`Warning: ${stderr}`));
-        }
-        console.log(chalk.green(`Output: ${stdout}`));
-      },
-    );
+    const args = [
+      "create-react-router@latest",
+      reactAppName,
+      ...(reactTypescript === "yes"
+        ? []
+        : ["--template", "remix-run/react-router-templates/javascript"]),
+    ];
+    runCommand("npx", args);
   } else {
     console.log(
       chalk.green("Initializing React project with Create React App..."),
     );
-    exec(
-      `npx create-react-app ${reactAppName} ${reactTypescript === "yes" ? "--template typescript" : ""}`,
-      (error, stdout, stderr) => {
-        if (error) {
-          console.error(chalk.red(`Error: ${error.message}`));
-          return;
-        }
-        if (stderr) {
-          console.error(chalk.yellow(`Warning: ${stderr}`));
-        }
-        console.log(chalk.green(`Output: ${stdout}`));
-      },
-    );
+    const args = [
+      "create-react-app",
+      reactAppName,
+      ...(reactTypescript === "yes" ? ["--template", "typescript"] : []),
+    ];
+    runCommand("npx", args);
   }
   return;
 }
+``;
