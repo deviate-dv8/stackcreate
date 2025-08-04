@@ -27,8 +27,8 @@ export default async function frontEndInit() {
       await vueInit();
       break;
     case "angular":
-      await angularInit();
       console.log(chalk.red("You selected Angular!"));
+      await angularInit();
       break;
     case "svelte":
       console.log(chalk.hex("#FFA500")("You selected Svelte!"));
